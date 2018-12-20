@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +15,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests {
+public class LoginTests2rec18 {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -25,6 +24,7 @@ public class LoginTests {
 	private ScreenShot screenShot;
 	private rec16addpostPOM addPost;
 	private rec17addnewpost addnewPost;
+	private rec18addnewcategory addnewcategory;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
@@ -39,6 +39,7 @@ public class LoginTests {
 		loginPOM = new LoginPOM(driver); 
 		addPost=new rec16addpostPOM(driver);
 		addnewPost=new rec17addnewpost(driver);
+		addnewcategory=new rec18addnewcategory(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -57,13 +58,15 @@ public class LoginTests {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		addPost.mouseoverpost();
+		//addPost.mouseoverpost();
 		Thread.sleep(1000);
-		addPost.clickallpost();
-		addPost.mouseoverparticularpost();
-		addPost.trash();
-		String actual=addPost.confirmsg();
-		Assert.assertEquals(actual, expected);
+		//addPost.clickallpost();
+		//addPost.mouseoverparticularpost();
+		//addPost.trash();
+		addnewcategory.mouseoverpost();
+		
+		addnewcategory.clickallpost();
+		addnewcategory.submit();
 		screenShot.captureScreenShot("First");
 	}
 }
