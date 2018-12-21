@@ -1,4 +1,5 @@
-package com.training.sanity.tests;
+//To verify whether application allows  admin to add the post into trash
+package com.training.pom;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,20 +22,21 @@ public class rec16addpostPOM {
 		@FindBy(xpath="//*[@id=\"menu-posts\"]/ul/li[2]/a")
 		private WebElement allpost; 
 		
-		@FindBy(xpath="//*[@id=\"post-2633\"]/td[1]/strong")
+		@FindBy(xpath="//*[@id=\"post-2631\"]/td[1]/strong/a")
 		private WebElement particularpost; 
 		
 		@FindBy(xpath="//*[@id=\"message\"]/p")
 		private WebElement delmsg;
 		
-		@FindBy(xpath="")
+		@FindBy(xpath="//*[@id=\"post-2631\"]/td[1]/div[3]/span[3]/a")
 		private WebElement trash;
-		
+		//mouseover to post link
 		public void mouseoverpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.postlink).build().perform();
 		}
+		//Click all post link
 		public void clickallpost() {
 			this.allpost.click();
 		}
@@ -42,22 +44,23 @@ public class rec16addpostPOM {
 		
 		
 		
-		
+		//mouse over to particular post
 		public void mouseoverparticularpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.particularpost).build().perform();
 		}
-		
+		//Click on Trash link
 		public void trash()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.trash).build().perform();
          trash.click();
 		}
+		//Checking the expected result
 		public String confirmsg()
 		{
-		String expected="1 post moved to the Trash.Undo";
+		
 		String s=delmsg.getText();
 		return s;
 	}

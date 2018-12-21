@@ -1,3 +1,4 @@
+//To verify whether application allows admin to add new category
 package com.training.sanity.tests;
 
 import java.io.FileInputStream;
@@ -5,13 +6,16 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
+import com.training.pom.rec18addnewcategoryPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
@@ -22,51 +26,54 @@ public class LoginTests2rec18 {
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private rec16addpostPOM addPost;
-	private rec17addnewpost addnewPost;
-	private rec18addnewcategory addnewcategory;
+	
+	private rec18addnewcategoryPOM addnewcategory;
+	private String actual;
+	private String expected="New launches";
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws IOException {
+	public  void setUpBeforeClass() throws IOException, InterruptedException {
 		properties = new Properties();
 		FileInputStream inStream = new FileInputStream("./resources/others.properties");
 		properties.load(inStream);
-	}
-
-	@BeforeMethod
-	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
-		addPost=new rec16addpostPOM(driver);
-		addnewPost=new rec17addnewpost(driver);
-		addnewcategory=new rec18addnewcategory(driver);
+		addnewcategory=new rec18addnewcategoryPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
 		Thread.sleep(1000);
-		
 	}
+
 	
-	@AfterMethod
+	
+	@AfterTest
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
+	
+	@Test(priority=1)
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		//addPost.mouseoverpost();
-		Thread.sleep(1000);
-		//addPost.clickallpost();
-		//addPost.mouseoverparticularpost();
-		//addPost.trash();
-		addnewcategory.mouseoverpost();
 		
-		addnewcategory.clickallpost();
-		addnewcategory.submit();
+	}
+	
+	@Test(priority=2)
+	public void Test() throws InterruptedException {
+		
+		addnewcategory.mouseoverpost();//Click on Posts link
+		Thread.sleep(1000);
+		addnewcategory.clickallpost();//Click on Categories link
+		//Enter Valid Credentials in Name,slug and description textbox
+		addnewcategory.submit();//Click on Add New Category button
+		
+		String actual=addnewcategory.confirm();
+		Assert.assertEquals(actual, expected);//compare between actual and expected results
 		screenShot.captureScreenShot("First");
 	}
+	
 }

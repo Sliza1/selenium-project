@@ -1,15 +1,17 @@
-package com.training.sanity.tests;
+//TO Verify whether application allows admin to add new post into list
+package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class rec17addnewpost {
+public class rec17addnewpostPOM {
 	private WebDriver driver; 
 	
-	public rec17addnewpost(WebDriver driver) {
+	public rec17addnewpostPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -23,27 +25,43 @@ public class rec17addnewpost {
 	@FindBy(xpath="//*[@id=\"title\"]")
 	private WebElement title; 
 	
-	@FindBy(xpath="//HTML[@lang='en-US']")
-	private WebElement bodytitle;
+	
+	@FindBy(xpath="//*[@id=\"message\"]/p/a")
+	private WebElement delmsg;
 	
 	@FindBy(id="publish")
 	private WebElement publish;
-	
+	//Click on Posts link
 	public void mouseoverpost()
 	{
      Actions action=new Actions(driver);
      action.moveToElement(this.postlink).build().perform();
 	}
+	//Click on addnew link
+	//Enter Valid credentials in Enter title here textbox
 	public void clickallpost() {
 		this.addnew.click();
 		title.sendKeys("New launches");
-		bodytitle.sendKeys("New launch in home");
+		
 	}
-	
+	//Enter valid credentials in body textbox
+	public void frame() {
+		driver.switchTo().frame(0);
+		driver.findElement(By.xpath("//*[@id=\"tinymce\"]")).sendKeys("New launch in home");
+		driver.switchTo().defaultContent();
+		
+	}
+	//Click on Publish button
 	public void publish() {
 		this.publish.click();
 	}
+	//checking expected results
+	public String confirmsg()
+	{
 	
+	String s=delmsg.getText();
+	return s;
+}
 	
 	
 	

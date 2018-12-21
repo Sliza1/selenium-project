@@ -1,5 +1,7 @@
-package com.training.sanity.tests;
+//TO Verify whether application allows admin to add new tag
+package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -32,24 +34,34 @@ public class rec20addtagPOM {
 		
 		@FindBy(id="submit")
 		private WebElement submit;
-		
+		//Click on Posts link
 		public void mouseoverpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.postlink).build().perform();
 		}
+		//Click on Tags link
+		//Enter Valid Credentials in Name,slug and description textbox
 		public void clickallpost() {
 			this.tag.click();
-			name.sendKeys("new launches");
+			name.sendKeys("abc");
 			slug.sendKeys("launch");
-			describe.sendKeys("new launches of villas,appartments");
+			describe.sendKeys("new launches of villas");
 		}
 		
 		
 		
-		
+		//Click on Add New Tag button
 		public void submit() {
 			this.submit.click();
+			driver.navigate().refresh();
+			
+		}
+		//checking expected results
+		
+		public String confirm() {
+			String s=driver.findElement(By.linkText("abc")).getText();
+			return s;
 		}
 	}
 
