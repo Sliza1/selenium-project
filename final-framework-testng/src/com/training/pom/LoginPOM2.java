@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPOM {
+public class LoginPOM2 {
 	private WebDriver driver; 
 	
-	public LoginPOM(WebDriver driver) {
+	public LoginPOM2(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -26,10 +26,8 @@ public class LoginPOM {
 	@FindBy(name="login")
 	private WebElement loginBtn; 
 	
-	public void clicklogin() {
-		this.login.click();
-		
-	}
+	
+	
 	
 	
 	public void sendUserName(String userName) {
@@ -44,5 +42,11 @@ public class LoginPOM {
 	
 	public void clickLoginBtn() {
 		this.loginBtn.click(); 
+	}
+
+
+	public void clicklogin() {
+		// TODO Auto-generated method stub
+		this.login.click();
 	}
 }

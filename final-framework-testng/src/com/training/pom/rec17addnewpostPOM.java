@@ -26,7 +26,7 @@ public class rec17addnewpostPOM {
 	private WebElement title; 
 	
 	
-	@FindBy(xpath="//*[@id=\"message\"]/p/a")
+	@FindBy(xpath="//*[@id=\"message\"]/p")
 	private WebElement delmsg;
 	
 	@FindBy(id="publish")
@@ -41,16 +41,16 @@ public class rec17addnewpostPOM {
 	//Enter Valid credentials in Enter title here textbox
 	public void clickallpost() {
 		this.addnew.click();
-		title.sendKeys("New launches");
-		
+		title.sendKeys("sun");
+		driver.findElement(By.id("content")).sendKeys("strat");
 	}
 	//Enter valid credentials in body textbox
-	public void frame() {
-		driver.switchTo().frame(0);
-		driver.findElement(By.xpath("//*[@id=\"tinymce\"]")).sendKeys("New launch in home");
-		driver.switchTo().defaultContent();
+	//public void frame() {
+		//driver.switchTo().frame(0);
+		//driver.findElement(By.xpath("//*[@id=\"tinymce\"]")).sendKeys("defed");
+		//driver.switchTo().defaultContent();
 		
-	}
+	//}
 	//Click on Publish button
 	public void publish() {
 		this.publish.click();

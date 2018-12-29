@@ -16,10 +16,11 @@ import org.testng.annotations.Test;
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
 import com.training.pom.rec17addnewpostPOM;
+import com.training.pom.rec40addcategoryPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class LoginTests2rec17 {
+public class LoginTests2rec40 {
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -27,10 +28,10 @@ public class LoginTests2rec17 {
 	private static Properties properties;
 	private ScreenShot screenShot;
 	
-	private rec17addnewpostPOM addnewPost;
+	private rec40addcategoryPOM addnewPost;
 	private String actual;
 	//private String expected="Post published.";
-	private String expected="Post published. View post";
+	private String expected="qazq";
 	private String tempResult;
 	
 
@@ -42,7 +43,7 @@ public class LoginTests2rec17 {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
 		
-		addnewPost=new rec17addnewpostPOM(driver);
+		addnewPost=new rec40addcategoryPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -52,11 +53,11 @@ public class LoginTests2rec17 {
 
 	
 	
-	@AfterTest
-	public void tearDown() throws Exception {
-		Thread.sleep(1000);
-		driver.quit();
-	}
+	//@AfterTest
+	//public void tearDown() throws Exception {
+		//Thread.sleep(1000);
+		//driver.quit();
+	//}
 	@Test(priority=1)
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
@@ -71,11 +72,15 @@ public class LoginTests2rec17 {
 		addnewPost.mouseoverpost();//Click on Posts link
 		
 		addnewPost.clickallpost();//Click on Addnew link,Enter Valid credentials in Enter title here textbox
-		//addnewPost.frame();//Enter valid credentials in body textbox
-		addnewPost.publish();  //Click on Publish button
-		
-		//tempResult=addnewPost.confirmsg().trim();
-		String actual=addnewPost.confirmsg();
+		//Enter valid credentials in body textbox
+		addnewPost.submit();  //Click on Publish button
+		addnewPost.clickaddnew();
+		//addnewPost.frame();
+		addnewPost.clickcheckbox();
+		Thread.sleep(1000);
+		addnewPost.publish();
+		addnewPost.clickviewpost();
+		String actual=addnewPost.confirm();
 		//actual=tempResult.substring(0, 15);
 		Assert.assertEquals(actual, expected);//compare between expected and actual results
 		screenShot.captureScreenShot("First");
