@@ -23,18 +23,18 @@ public class rec52propertyPOM {
 		@FindBy(xpath="//*[@id=\"menu-posts-property\"]/ul/li[2]/a")
 		private WebElement allproperty; 
 		
-		@FindBy(xpath="//*[@id=\"post-3015\"]/td[1]/strong/a")
+		@FindBy(xpath="//*[@id=\"post-3424\"]/td[1]/strong/a")
 		private WebElement mouseover1;
 		
-		@FindBy(xpath="//*[@id=\"post-3015\"]/td[1]/div[3]/span[3]/a")
+		@FindBy(xpath="//*[@id=\"post-3424\"]/td[1]/div[3]/span[3]/a")
 		private WebElement trash; 
 		
 		@FindBy(xpath="//*[@id=\"wpbody-content\"]/div[3]/ul/li[4]/a")
 		private WebElement trash1;
 		
-		@FindBy(xpath="//*[@id=\"post-3015\"]/td[1]/strong")
+		@FindBy(xpath="//*[@id=\"post-3424\"]/td[1]/strong")
 		private WebElement mouseover;
-		@FindBy(xpath="//*[@id=\"post-3015\"]/td[1]/div[2]/span[2]/a")
+		@FindBy(xpath="//*[@id=\"post-3424\"]/td[1]/div[2]/span[2]/a")
 		private WebElement delete;
 		@FindBy(xpath="//*[@id=\"message\"]/p")
 		private WebElement conmsg;

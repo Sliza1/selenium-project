@@ -31,7 +31,7 @@ public class LoginTests2rec40 {
 	private rec40addcategoryPOM addnewPost;
 	private String actual;
 	//private String expected="Post published.";
-	private String expected="qazq";
+	private String expected="January";
 	private String tempResult;
 	
 
@@ -53,11 +53,11 @@ public class LoginTests2rec40 {
 
 	
 	
-	//@AfterTest
-	//public void tearDown() throws Exception {
-		//Thread.sleep(1000);
-		//driver.quit();
-	//}
+	@AfterTest
+	public void tearDown() throws Exception {
+		Thread.sleep(1000);
+		driver.quit();
+	}
 	@Test(priority=1)
 	public void validLoginTest() throws InterruptedException {
 		loginPOM.sendUserName("admin");
@@ -77,8 +77,9 @@ public class LoginTests2rec40 {
 		addnewPost.clickaddnew();
 		//addnewPost.frame();
 		addnewPost.clickcheckbox();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		addnewPost.publish();
+		Thread.sleep(6000);
 		addnewPost.clickviewpost();
 		String actual=addnewPost.confirm();
 		//actual=tempResult.substring(0, 15);

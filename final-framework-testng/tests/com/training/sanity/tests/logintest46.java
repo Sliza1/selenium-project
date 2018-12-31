@@ -73,8 +73,9 @@ public class logintest46 {
 		addPost.clickaddnew();//Click all Posts link
 		addPost.entertitle();//mouse over to particular post
 		addPost.checkboxes();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		addPost.clickpublish();
+		Thread.sleep(3000);
 		String actual=addPost.confirmsg();
 		Assert.assertEquals(actual, expected);//comparing expected and actual
 		screenShot.captureScreenShot("First");

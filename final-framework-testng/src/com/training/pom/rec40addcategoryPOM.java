@@ -53,9 +53,9 @@ public class rec40addcategoryPOM {
 	//Enter Valid Credentials in Name,slug and description textbox
 	public void clickallpost() {
 		this.category.click();
-		name.sendKeys("app");
-		slug.sendKeys("building");
-		describe.sendKeys("New launches of villas,appartments");
+		name.sendKeys("townhall");
+		slug.sendKeys("cityhall");
+		describe.sendKeys("this is test");
 	}
 	//Click on Add New Category button
 	public void submit() {
@@ -66,8 +66,8 @@ public class rec40addcategoryPOM {
 	
 	public void clickaddnew() {
 		this.addnew.click();
-		title.sendKeys("qazq");
-		driver.findElement(By.id("content")).sendKeys("wsxw");
+		title.sendKeys("January");
+		driver.findElement(By.id("content")).sendKeys("material is good");
 	}
 	
 	//public void frame() {
@@ -89,7 +89,7 @@ public class rec40addcategoryPOM {
 		
 	}
 	public String confirm() {
-		String s=driver.findElement(By.linkText("qazq")).getText();
+		String s=driver.findElement(By.linkText("January")).getText();
 		return s;
 	}
 }

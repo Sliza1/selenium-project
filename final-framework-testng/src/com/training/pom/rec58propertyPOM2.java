@@ -24,21 +24,20 @@ public class rec58propertyPOM2 {
 		@FindBy(xpath="//*[@id=\"menu-item-617\"]/a")
 		private WebElement blog; 
 		
-		@FindBy(xpath="//*[@id=\"post-3045\"]/div/a")
+		@FindBy(xpath="//*[@id=\"post-3425\"]/div/a")
 		private WebElement readmore; 
 		
 		@FindBy(id="comment")
 		private WebElement comments;
 		
-		//@FindBy(cssSelector="//*[@id="comment-1756"]/td[1]/strong/img")
-		//private WebElement clickcomments; 
 		
-		@FindBy(xpath="//*[@id=\"comment-1756\"]/td[1]/strong/img")
+		
+		@FindBy(xpath="//*[@id=\"comment-1801\"]/td[1]/strong/img")
 		private WebElement mouseovercomment;
 		
 		@FindBy(xpath="//*[@id=\"post-3015\"]/td[1]/strong")
 		private WebElement mouseover;
-		@FindBy(xpath="//*[@id=\"comment-1756\"]/td[2]/div[3]/span[3]/a")
+		@FindBy(xpath="//*[@id=\"comment-1801\"]/td[2]/div[3]/span[3]/a")
 		private WebElement reply;
 		@FindBy(id="replycontent")
 		private WebElement content;
@@ -49,9 +48,9 @@ public class rec58propertyPOM2 {
 		{
          this.blog.click();
          this.readmore.click();
-         this.comments.sendKeys("goodmaterial");
-         driver.findElement(By.id("author")).sendKeys("Mun1");
-         driver.findElement(By.id("email")).sendKeys("Mun1@gmail.com");
+         this.comments.sendKeys("today is Monday");
+         driver.findElement(By.id("author")).sendKeys("Mun2");
+         driver.findElement(By.id("email")).sendKeys("Mun2@gmail.com");
          driver.findElement(By.id("submit")).click();
 		}
 		
@@ -73,12 +72,12 @@ public class rec58propertyPOM2 {
 			 Actions action=new Actions(driver);
 		     action.moveToElement(this.mouseovercomment).build().perform();
 		     this.reply.click();
-		     this.content.sendKeys("mat16");
+		     this.content.sendKeys("mat19");
 		     this.buttonreply.click();
 		}
 		public int entercredentials1() 
 		{
-		     String a=driver.findElement(By.xpath("//*[@id=\"comment-1756\"]/td[3]/div/span/a[1]/span[1]")).getText();
+		     String a=driver.findElement(By.xpath("//*[@id=\"comment-1801\"]/td[3]/div/span/a[1]/span[1]")).getText();
 		     int i = Integer.parseInt(a);
 		     int exp= i+1;
 		     return exp;
@@ -91,7 +90,7 @@ public class rec58propertyPOM2 {
 		public int entercredentials3() 
 		{  
 		     
-		     String j=driver.findElement(By.xpath("//*[@id=\"comment-1756\"]/td[3]/div/span/a[1]/span[1]")).getText();
+		     String j=driver.findElement(By.xpath("//*[@id=\"comment-1801\"]/td[3]/div/span/a[1]/span[1]")).getText();
 		     int act=Integer.parseInt(j);
 		     return act;
 		}
