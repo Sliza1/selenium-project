@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To verify whether application allows to search details & fill enquiry details in Commercial tab
 package com.training.pom;
 
 import org.openqa.selenium.By;
@@ -39,12 +39,12 @@ public class retc34POM {
 		//@FindBy(cssSelector="//*[@id=\"wpcf7-f119-p134-o1\"]/form/div[4]")
 		//private WebElement thankumessage;
 		
-		//mouseover to post link
+		//Click on Commercial tab
 		public void clickcommercial()
 		{
          this.commercial.click();
 		}
-		
+		//click on search button.Enter details of apartment in search box.Click on Nullam hendrerit apartment link
 		public void clicksearch()
 		{
          this.search.click();
@@ -52,13 +52,14 @@ public class retc34POM {
          this.searchapartment.click();
          
 		}
-		
+		//switch tabs and Click on Drop Us a Line Link
 		public void clickdrop()
 		{
 			String handle = driver.getWindowHandle();
 			 driver.switchTo().window(handle);
          this.drop.click();
 		}
+		//Enter valid details in Your Name,email address and subject textbox
 		public void enterdetails()
 		{
 		 
@@ -67,7 +68,7 @@ public class retc34POM {
          this.entersubject.sendKeys("housings");
          this.entermessage.sendKeys("looking for housings");
 		}
-		
+		//Scroll bottom of the page and click send button
 		public void clicksend()
 		{
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -76,6 +77,7 @@ public class retc34POM {
          this.send.click();
 		}
 		
+		//Check expected
 		public String message()
 		{
 		 

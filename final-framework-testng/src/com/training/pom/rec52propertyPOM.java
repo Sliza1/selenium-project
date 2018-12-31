@@ -38,17 +38,17 @@ public class rec52propertyPOM {
 		private WebElement delete;
 		@FindBy(xpath="//*[@id=\"message\"]/p")
 		private WebElement conmsg;
-		//mouseover to post link
+		//Click on Properties tab
 		public void mouseoverpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.propertylink).build().perform();
 		}
-		//Click all post link
+		//Click all properties link
 		public void clickproperty() {
 			this.allproperty.click();
 		}
-		
+		//Mouse over the property
 		public void mouse() {
 			Actions action=new Actions(driver);
 	         action.moveToElement(this.mouseover1).build().perform();
@@ -62,12 +62,14 @@ public class rec52propertyPOM {
          
          
 		}
+		//Click on Trash link
 		public void trashlink1()
 		{
          this.trash1.click();
          
          
 		}
+		//Mouse over property details and click delete permanently link
 		public void mouseoverprop()
 		{
 			Actions action=new Actions(driver);

@@ -68,13 +68,13 @@ public class logintest46 {
 	@Test(priority=2)
 	public void Test() throws InterruptedException {
 		
-		addPost.mouseoverpost();//Click on Posts link
+		addPost.mouseoverpost();//Click on Properties tab
 		Thread.sleep(1000);
-		addPost.clickaddnew();//Click all Posts link
-		addPost.entertitle();//mouse over to particular post
-		addPost.checkboxes();
+		addPost.clickaddnew();//Click addnew
+		addPost.entertitle();//enter text in enter title and textbox
+		addPost.checkboxes();//click checkboxes 
 		Thread.sleep(2000);
-		addPost.clickpublish();
+		addPost.clickpublish();//click publish
 		Thread.sleep(3000);
 		String actual=addPost.confirmsg();
 		Assert.assertEquals(actual, expected);//comparing expected and actual

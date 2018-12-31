@@ -43,7 +43,7 @@ public class rec58propertyPOM2 {
 		private WebElement content;
 		@FindBy(id="replybtn")
 		private WebElement buttonreply;
-		//mouseover to post link
+		//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
 		public void clickblog()
 		{
          this.blog.click();
@@ -53,7 +53,7 @@ public class rec58propertyPOM2 {
          driver.findElement(By.id("email")).sendKeys("Mun2@gmail.com");
          driver.findElement(By.id("submit")).click();
 		}
-		
+		//open admin site and login//click on Comments tab
 		public void newwindow()
 		{
 			//String  handle= driver.getWindowHandle();
@@ -66,7 +66,8 @@ public class rec58propertyPOM2 {
 			
 			driver.findElement(By.cssSelector("#menu-comments > a > div.wp-menu-name")).click();
 		}
-			
+		
+		//Mouse over comments//Click on Reply icon//enter details and again click reply
 		public void entercredentials() 
 		{
 			 Actions action=new Actions(driver);
@@ -75,6 +76,7 @@ public class rec58propertyPOM2 {
 		     this.content.sendKeys("mat19");
 		     this.buttonreply.click();
 		}
+		//expected result
 		public int entercredentials1() 
 		{
 		     String a=driver.findElement(By.xpath("//*[@id=\"comment-1801\"]/td[3]/div/span/a[1]/span[1]")).getText();
@@ -82,11 +84,12 @@ public class rec58propertyPOM2 {
 		     int exp= i+1;
 		     return exp;
 		}
-		
+		//page refresh done to get update results in response icon
 		public void entercredentials2() 
 		{
 		     driver.navigate().refresh();
 		}
+		//checking actual results
 		public int entercredentials3() 
 		{  
 		     

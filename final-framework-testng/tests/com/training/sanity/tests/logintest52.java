@@ -69,16 +69,16 @@ public class logintest52 {
 	@Test(priority=2)
 	public void Test() throws InterruptedException {
 		
-		addPost.mouseoverpost();//Click on Posts link
+		addPost.mouseoverpost();//Click on properties link
 		Thread.sleep(1000);
-		addPost.clickproperty();
+		addPost.clickproperty();//clcik all properties
 		Thread.sleep(1000);
-		addPost.mouse();//Click all Posts link
+		addPost.mouse();//mouse over property
 		
-		addPost.trashlink();//mouse over to particular post
+		addPost.trashlink();//click trash
 		Thread.sleep(1000);
-		addPost.trashlink1();
-		addPost.mouseoverprop();
+		addPost.trashlink1();//click trash
+		addPost.mouseoverprop();//Mouse over property details.clcik delete permanently link
 		String actual=addPost.confirmsg();
 		Assert.assertEquals(actual, expected);//comparing expected and actual
 		screenShot.captureScreenShot("First");

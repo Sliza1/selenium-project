@@ -5,7 +5,7 @@
     <classes>
       <class name="com.training.sanity.tests.logintest58">
         <methods>
-          <include name="Test"/>
+          <include name="tearDown"/>
           <include name="Test"/>
           <include name="setUpBeforeClass"/>
         </methods>

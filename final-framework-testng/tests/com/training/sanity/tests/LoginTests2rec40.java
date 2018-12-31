@@ -71,16 +71,16 @@ public class LoginTests2rec40 {
 		
 		addnewPost.mouseoverpost();//Click on Posts link
 		
-		addnewPost.clickallpost();//Click on Addnew link,Enter Valid credentials in Enter title here textbox
-		//Enter valid credentials in body textbox
-		addnewPost.submit();  //Click on Publish button
-		addnewPost.clickaddnew();
+		addnewPost.clickallpost();//Click on Categories link
+		//Enter Valid Credentials in Name,slug and description textbox
+		addnewPost.submit(); //Click on Add New Category button 
+		addnewPost.clickaddnew();//click add new
 		//addnewPost.frame();
-		addnewPost.clickcheckbox();
+		addnewPost.clickcheckbox();//Click on Checkbox beside created category name of category section
 		Thread.sleep(3000);
-		addnewPost.publish();
+		addnewPost.publish();//click publish
 		Thread.sleep(6000);
-		addnewPost.clickviewpost();
+		addnewPost.clickviewpost();//click view post
 		String actual=addnewPost.confirm();
 		//actual=tempResult.substring(0, 15);
 		Assert.assertEquals(actual, expected);//compare between expected and actual results

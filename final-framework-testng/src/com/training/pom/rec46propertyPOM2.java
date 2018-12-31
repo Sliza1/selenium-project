@@ -35,13 +35,13 @@ public class rec46propertyPOM2 {
 		private WebElement publish;
 		@FindBy(xpath="//*[@id=\"message\"]/p")
 		private WebElement conmsg;
-		//mouseover to post link
+		//Click on Properties tab
 		public void mouseoverpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.propertylink).build().perform();
 		}
-		//Click all post link
+		//Click on addnew
 		public void clickaddnew() {
 			this.addnew.click();
 		}
@@ -49,19 +49,20 @@ public class rec46propertyPOM2 {
 		
 		
 		
-		//mouse over to particular post
+		//enter valid credentials in enter title and textbox
 		public void entertitle()
 		{
          this.title.sendKeys("prestige");
          driver.findElement(By.id("content")).sendKeys("hometown");
 		}
-		//Click on Trash link
+		//Click on checkbox beside added Feature and region
 		public void checkboxes()
 		{
          this.feature.click();
          this.region.click();
          
 		}
+		//click publish
 		public void clickpublish()
 		{
          this.publish.click();

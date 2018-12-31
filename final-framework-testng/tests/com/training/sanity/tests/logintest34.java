@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To verify whether application allows to search details & fill enquiry details in Commercial tab
 package com.training.sanity.tests;
 
 
@@ -70,17 +70,17 @@ public class logintest34 {
 	@Test(priority=2)
 	public void Test() throws InterruptedException {
 		
-		addPost.clickcommercial();//Click on Posts link
-		addPost.clicksearch();
+		addPost.clickcommercial();//Click on Commercial tab
+		addPost.clicksearch();//click on search button.Enter details of apartment in search box.Click on Nullam hendrerit apartment link
 		Thread.sleep(1000);
-		addPost.clickdrop();
+		addPost.clickdrop();//Click on Drop Us a Line Link.
 	
-		addPost.enterdetails();
-		addPost.clicksend();
+		addPost.enterdetails();//Enter valid details in Your Name,email address and subject textbox
+		addPost.clicksend();//Click on Send button
 		//tempResult=addPost.message().trim();
 		//String actual=tempResult.substring(0, 27);
 		String actual=addPost.message();
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, expected);//chekcing expected and actual
 		screenShot.captureScreenShot("First");
 	}
 }

@@ -74,17 +74,17 @@ public class logintest58 {
 		
 		
 		
-		addPost.clickblog();
+		addPost.clickblog();//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
 		//Thread.sleep(1000);
-        addPost.newwindow();
+        addPost.newwindow();//open admin site and login//click on Comments tab
 		Thread.sleep(2000);
-		addPost.entercredentials();
-		int expected=addPost.entercredentials1();
+		addPost.entercredentials();//Mouse over comments//Click on Reply icon//enter details and again click reply
+		int expected=addPost.entercredentials1();//expected result
 		Thread.sleep(2000);
-		addPost.entercredentials2();
+		addPost.entercredentials2();//page refresh
 		Thread.sleep(1000);
-		int actual=addPost.entercredentials3();
-		Assert.assertEquals(actual, expected);
+		int actual=addPost.entercredentials3();//actual results
+		Assert.assertEquals(actual, expected);//checking expected and actual results
 		screenShot.captureScreenShot("First");
 	}
 }

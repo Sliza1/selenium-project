@@ -63,7 +63,7 @@ public class rec40addcategoryPOM {
 		driver.navigate().refresh();
 	}
 	
-	
+	//click add new
 	public void clickaddnew() {
 		this.addnew.click();
 		title.sendKeys("January");
@@ -76,18 +76,24 @@ public class rec40addcategoryPOM {
 		//driver.switchTo().defaultContent();
 		
 	//}
+	
+	//Click on Checkbox beside created category name of category section
 	public void clickcheckbox() {
 		this.checkbox.click();
 		
 	}
+	//clcik publish
 	public void publish() {
 		
 		this.publish.click();
 	}
+	//click view post
 	public void clickviewpost() {
 		this.viewpost.click();
 		
 	}
+	
+	//Checking expected
 	public String confirm() {
 		String s=driver.findElement(By.linkText("January")).getText();
 		return s;
