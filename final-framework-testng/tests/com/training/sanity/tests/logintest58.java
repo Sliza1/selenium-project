@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To verify whether application allows admin to reply for the comment added by user
 package com.training.sanity.tests;
 
 
@@ -74,11 +74,11 @@ public class logintest58 {
 		
 		
 		
-		addPost.clickblog();//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
+		addPost.clickblog("today is Thurs","tuli","tuli@gmail.com");//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
 		//Thread.sleep(1000);
-        addPost.newwindow();//open admin site and login//click on Comments tab
+        addPost.newwindow("admin","admin@123");//open admin site and login//click on Comments tab
 		Thread.sleep(2000);
-		addPost.entercredentials();//Mouse over comments//Click on Reply icon//enter details and again click reply
+		addPost.entercredentials("mat20");//Mouse over comments//Click on Reply icon//enter details and again click reply
 		int expected=addPost.entercredentials1();//expected result
 		Thread.sleep(2000);
 		addPost.entercredentials2();//page refresh

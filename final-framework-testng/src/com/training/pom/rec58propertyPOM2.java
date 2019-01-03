@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To verify whether application allows admin to reply for the comment added by user
 package com.training.pom;
 
 import org.openqa.selenium.By;
@@ -44,36 +44,36 @@ public class rec58propertyPOM2 {
 		@FindBy(id="replybtn")
 		private WebElement buttonreply;
 		//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
-		public void clickblog()
+		public void clickblog(String b,String c, String d)
 		{
          this.blog.click();
          this.readmore.click();
-         this.comments.sendKeys("today is Monday");
-         driver.findElement(By.id("author")).sendKeys("Mun2");
-         driver.findElement(By.id("email")).sendKeys("Mun2@gmail.com");
+         this.comments.sendKeys(b);
+         driver.findElement(By.id("author")).sendKeys(c);
+         driver.findElement(By.id("email")).sendKeys(d);
          driver.findElement(By.id("submit")).click();
 		}
 		//open admin site and login//click on Comments tab
-		public void newwindow()
+		public void newwindow(String e,String f)
 		{
 			//String  handle= driver.getWindowHandle();
 			//driver.switchTo().window(handle);
 			//WebDriver driver=new ChromeDriver();
 			driver.get("http://realestate.hommelle.com/admin");
-			driver.findElement(By.id("user_login")).sendKeys("admin");
-			driver.findElement(By.id("user_pass")).sendKeys("admin@123");
+			driver.findElement(By.id("user_login")).sendKeys(e);
+			driver.findElement(By.id("user_pass")).sendKeys(f);
 			driver.findElement(By.name("login")).click();
 			
 			driver.findElement(By.cssSelector("#menu-comments > a > div.wp-menu-name")).click();
 		}
 		
 		//Mouse over comments//Click on Reply icon//enter details and again click reply
-		public void entercredentials() 
+		public void entercredentials(String a) 
 		{
 			 Actions action=new Actions(driver);
 		     action.moveToElement(this.mouseovercomment).build().perform();
 		     this.reply.click();
-		     this.content.sendKeys("mat19");
+		     this.content.sendKeys(a);
 		     this.buttonreply.click();
 		}
 		//expected result

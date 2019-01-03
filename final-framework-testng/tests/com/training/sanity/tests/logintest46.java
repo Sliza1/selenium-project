@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To verify whether application allows admin to create property details based by adding feature & regions
 package com.training.sanity.tests;
 
 
@@ -71,11 +71,11 @@ public class logintest46 {
 		addPost.mouseoverpost();//Click on Properties tab
 		Thread.sleep(1000);
 		addPost.clickaddnew();//Click addnew
-		addPost.entertitle();//enter text in enter title and textbox
+		addPost.entertitle("prestige","hometown");//enter text in enter title and textbox
 		addPost.checkboxes();//click checkboxes 
 		Thread.sleep(2000);
 		addPost.clickpublish();//click publish
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		String actual=addPost.confirmsg();
 		Assert.assertEquals(actual, expected);//comparing expected and actual
 		screenShot.captureScreenShot("First");

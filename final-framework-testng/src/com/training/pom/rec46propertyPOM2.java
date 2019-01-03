@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To verify whether application allows admin to create property details based by adding feature & regions
 package com.training.pom;
 
 import org.openqa.selenium.By;
@@ -50,10 +50,10 @@ public class rec46propertyPOM2 {
 		
 		
 		//enter valid credentials in enter title and textbox
-		public void entertitle()
+		public void entertitle(String a,String b)
 		{
-         this.title.sendKeys("prestige");
-         driver.findElement(By.id("content")).sendKeys("hometown");
+         this.title.sendKeys(a);
+         driver.findElement(By.id("content")).sendKeys(b);
 		}
 		//Click on checkbox beside added Feature and region
 		public void checkboxes()

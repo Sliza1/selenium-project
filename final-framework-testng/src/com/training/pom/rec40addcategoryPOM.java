@@ -1,4 +1,4 @@
-//To verify whether application allows admin to add new category
+//To verify whether application displays added post in blog section of home screen
 package com.training.pom;
 
 import org.openqa.selenium.By;
@@ -51,11 +51,11 @@ public class rec40addcategoryPOM {
 	}
 	//Click on Categories link
 	//Enter Valid Credentials in Name,slug and description textbox
-	public void clickallpost() {
+	public void clickallpost(String e, String c, String d) {
 		this.category.click();
-		name.sendKeys("townhall");
-		slug.sendKeys("cityhall");
-		describe.sendKeys("this is test");
+		name.sendKeys(e);
+		slug.sendKeys(c);
+		describe.sendKeys(d);
 	}
 	//Click on Add New Category button
 	public void submit() {
@@ -64,10 +64,10 @@ public class rec40addcategoryPOM {
 	}
 	
 	//click add new
-	public void clickaddnew() {
+	public void clickaddnew(String a, String b) {
 		this.addnew.click();
-		title.sendKeys("January");
-		driver.findElement(By.id("content")).sendKeys("material is good");
+		title.sendKeys(a);
+		driver.findElement(By.id("content")).sendKeys(b);
 	}
 	
 	//public void frame() {
@@ -95,7 +95,7 @@ public class rec40addcategoryPOM {
 	
 	//Checking expected
 	public String confirm() {
-		String s=driver.findElement(By.linkText("January")).getText();
+		String s=driver.findElement(By.linkText("February")).getText();
 		return s;
 	}
 }
