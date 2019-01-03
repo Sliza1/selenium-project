@@ -95,7 +95,7 @@ public class rec40addcategoryPOM {
 	
 	//Checking expected
 	public String confirm() {
-		String s=driver.findElement(By.linkText("February")).getText();
+		String s=driver.findElement(By.linkText("March")).getText();
 		return s;
 	}
 }

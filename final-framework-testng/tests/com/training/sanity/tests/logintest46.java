@@ -71,7 +71,7 @@ public class logintest46 {
 		addPost.mouseoverpost();//Click on Properties tab
 		Thread.sleep(1000);
 		addPost.clickaddnew();//Click addnew
-		addPost.entertitle("prestige","hometown");//enter text in enter title and textbox
+		addPost.entertitle("Prestige","hometown");//enter text in enter title and textbox
 		addPost.checkboxes();//click checkboxes 
 		Thread.sleep(2000);
 		addPost.clickpublish();//click publish

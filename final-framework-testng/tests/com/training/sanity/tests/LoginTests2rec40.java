@@ -31,7 +31,7 @@ public class LoginTests2rec40 {
 	private rec40addcategoryPOM addnewPost;
 	private String actual;
 	//private String expected="Post published.";
-	private String expected="February";
+	private String expected="March";
 	private String tempResult;
 	
 
@@ -71,10 +71,10 @@ public class LoginTests2rec40 {
 		
 		addnewPost.mouseoverpost();//Click on Posts link
 		
-		addnewPost.clickallpost("howmtown","newtown","kolkata");//Click on Categories link
+		addnewPost.clickallpost("Hometown","Newtown","Kolkata");//Click on Categories link
 		//Enter Valid Credentials in Name,slug and description textbox
 		addnewPost.submit(); //Click on Add New Category button 
-		addnewPost.clickaddnew("February","next is");//click add new
+		addnewPost.clickaddnew("March","next is Feb");//click add new
 		//addnewPost.frame();
 		addnewPost.clickcheckbox();//Click on Checkbox beside created category name of category section
 		Thread.sleep(3000);

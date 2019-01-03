@@ -74,7 +74,7 @@ public class logintest58 {
 		
 		
 		
-		addPost.clickblog("today is Thurs","tuli","tuli@gmail.com");//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
+		addPost.clickblog("today is Thursday","tuli","tuli@gmail.com");//click blog tab//Click on Read More link of post added by admin//enter details/Click on Post Comment button
 		//Thread.sleep(1000);
         addPost.newwindow("admin","admin@123");//open admin site and login//click on Comments tab
 		Thread.sleep(2000);
