@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To Verify whether application allows admin to add multiple users for different roles
 package com.training.pom;
 
 import org.openqa.selenium.By;
@@ -62,19 +62,20 @@ public class rec76multipleusers {
 		
 		
 		
-		//mouse over to particular post
+		//mouse over to user link
 		public void mouseoverparticularpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.users).build().perform();
 		}
-		//Click on Trash link
+		//Click on add new link
 		public void addnewuser()
 		{
          
          addnew.click();
 		}
 		
+		//enter text in username, mail, firstname ,lastname and website fields
 		public void usernameval(String uname,String mail,String fname,String lname,String urli)
 		{
          
@@ -85,7 +86,7 @@ public class rec76multipleusers {
          url.sendKeys(urli);
          
 		}
-		
+		//enter password
 		public void usernameval1(String spassword ) throws InterruptedException
 		{
          
@@ -99,7 +100,7 @@ public class rec76multipleusers {
          
          
 		}
-		
+		//select role and click add new user
 		public void usernameval2(String role )
 		{
 			Select dropdown=new Select(role1);
@@ -108,6 +109,8 @@ public class rec76multipleusers {
 	         
 	         
 			}
+		
+		//Check expected
 		public String confirm( )
 		{
 			String s=conmsg.getText();

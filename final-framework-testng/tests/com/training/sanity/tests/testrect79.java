@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To Verify whether application allows admin to Add multiple New Feature in the application
 package com.training.sanity.tests;
 
 
@@ -72,21 +72,21 @@ public class testrect79 {
 	@Test(priority=2,dataProviderClass=TestUtil.class,dataProvider="dp")
 	public void multiplefeatures(String nam,String slu,String feature,String desc ) throws InterruptedException  {
 		
-		addPost.mouseoverpost();//Click on Posts link
+		addPost.mouseoverpost();//Click on Property link
 		
-		addPost.clickaddnew();//Click all Posts link
-		addPost.entercredential(nam,slu);
-		Thread.sleep(1000);//mouse over to particular post
-		addPost.entercredential1(feature,desc);//click on trash
+		addPost.clickaddnew();//Click features link
+		addPost.entercredential(nam,slu);//enter text in title and slug textboxes
+		Thread.sleep(1000);
+		addPost.entercredential1(feature,desc);//select parent feature and enter description
 		//Thread.sleep(4000);
-		addPost.addnewfeature();
+		addPost.addnewfeature();//click publish
 		Thread.sleep(3000);
-		//addPost.refresh();
-		addPost.enterSearchItem(nam.trim());
-		addPost.clickOnSearchRegionBtn();
+		//addPost.refresh();//refresh webpage
+		addPost.enterSearchItem(nam.trim());//enter search item
+		addPost.clickOnSearchRegionBtn();//search the item
 		Thread.sleep(1000);
 		
-		Assert.assertTrue(addPost.searchForAddedRegion(nam.trim()));//comparing expected and actual
+		Assert.assertTrue(addPost.searchForAddedfeature(nam.trim()));//comparing expected and actual
 		screenShot.captureScreenShot("First");
 	}
 }

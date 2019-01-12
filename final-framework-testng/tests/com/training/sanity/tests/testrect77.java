@@ -70,14 +70,14 @@ public class testrect77 {
 	@Test(priority=2,dataProviderClass=TestUtil.class,dataProvider="dp")
 	public void dbTest(String uname,String mail,String fname,String lname,String urli,String spassword,String role ) throws InterruptedException  {
 		
-		addPost.mouseoverparticularpost();//Click on Posts link
+		addPost.mouseoverparticularpost();//Click on Property link
 		
-		addPost.addnewuser();//Click all Posts link
-		addPost.usernameval(uname,mail,fname,lname,urli);
-		//Thread.sleep(1000);//mouse over to particular post
-		addPost.usernameval1(spassword);//click on trash
+		addPost.addnewuser();//Click add new link
+		addPost.usernameval(uname,mail,fname,lname,urli);//enter text in username, mail, firstname ,lastname and website fields
+		
+		addPost.usernameval1(spassword);//enter password
 		//Thread.sleep(4000);
-		addPost.usernameval2(role);
+		addPost.usernameval2(role);//select role and clcik add new user button
 		Thread.sleep(1000);
 		String actual=addPost.confirm();
 		//Assert.assertEquals(actual, expected);//comparing expected and actual

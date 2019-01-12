@@ -1,3 +1,5 @@
+//To Verify whether application displays error message upon entering invalid details in required fields while creating user by admin
+
 package com.training.pom;
 
 import java.util.List;
@@ -84,20 +86,20 @@ private boolean flag = false;
 	@FindBy(name="pw_weak")
 	private WebElement weakPwrdChckBox;
 
-
+//click property link
 	public void mouseoverparticularpost()
 	{
      Actions action=new Actions(driver);
      action.moveToElement(this.users).build().perform();
 	}
-	//Click on Trash link
+	//Click on add new link
 	public void addnewuser()
 	{
      
      addnew.click();
 	}
 
-	//Enter User name
+	//Enter User name ans rest details
 	public void addNewUser1(String uName, String email, String fName, String lName, String site, String pwrd, String role) {
 		if(!uName.isEmpty()) {
 			this.userNameField.sendKeys(uName);

@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.sanity.tests.testrect77">
+      <class name="com.training.sanity.tests.testrect80">
         <methods>
-          <include name="dbTest" invocation-numbers="0"/>
+          <include name="multipleusers"/>
           <include name="setUpBeforeClass"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.training.sanity.tests.testrect77 -->
+      </class> <!-- com.training.sanity.tests.testrect80 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

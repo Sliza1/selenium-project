@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To Verify whether application displays error message upon entering invalid details in required fields while creating user by admin
 package com.training.sanity.tests;
 
 
@@ -70,13 +70,13 @@ public class testrect78 {
 	@Test(priority=2,dataProviderClass=TestUtil.class,dataProvider="dp")
 	public void invalid(String uName,String email,String fName,String lName,String site,String pwrd,String role ) throws InterruptedException  {
 		
-		addPost.mouseoverparticularpost();//Click on Posts link
+		addPost.mouseoverparticularpost();//Click on Property link
 		
-		addPost.addnewuser();//Click all Posts link
-		addPost.addNewUser1(uName, email,fName,lName,site,pwrd,role);
+		addPost.addnewuser();//Click addnew link
+		addPost.addNewUser1(uName, email,fName,lName,site,pwrd,role);//enter user and rest details
 		//Thread.sleep(1000);//mouse over to particular post
 		
-		addPost.confirmationMsg();
+		addPost.confirmationMsg();//check expected
 		//Assert.assertEquals(actual, expected);//comparing expected and actual
 		//screenShot.captureScreenShot("First");
 	}

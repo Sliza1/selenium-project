@@ -1,4 +1,4 @@
-//To verify whether application allows admin to create property details based by adding feature & regions
+//To Verify whether application allows admin to Add multiple New Feature in the application
 package com.training.pom;
 
 import java.util.List;
@@ -47,10 +47,10 @@ public class rec79multiplefeaturePOM {
 		private WebElement publish;
 		
 		@FindBy(id="the-list")
-		private WebElement regionsTable; 
+		private WebElement featureTable; 
 		
 		@FindBy(id="tag-search-input")
-		private WebElement searchRegion;
+		private WebElement searchfeature;
 
 		//Finding the search button
 		@FindBy(id="search-submit")
@@ -63,7 +63,7 @@ public class rec79multiplefeaturePOM {
          Actions action=new Actions(driver);
          action.moveToElement(this.propertylink).build().perform();
 		}
-		//Click on addnew
+		//Click on features
 		public void clickaddnew() {
 			this.features.click();
 		}
@@ -71,13 +71,13 @@ public class rec79multiplefeaturePOM {
 		
 		
 		
-		//enter valid credentials in enter title and textbox
+		//enter valid credentials in enter title and slug
 		public void entercredential(String nam,String slu)
 		{
          this.name.sendKeys(nam);
          this.slug.sendKeys(slu);
 		}
-		//Click on checkbox beside added Feature and region
+		//select parent feature and enter description
 		public void entercredential1(String feature,String desc)
 		{
 			//JavascriptExecutor je = (JavascriptExecutor) driver;
@@ -88,7 +88,7 @@ public class rec79multiplefeaturePOM {
 			//je.executeScript("arguments[0].scrollIntoView(true);",feature);
 			 this.description.sendKeys(desc);
 		}
-		
+		//clcik publish
 		public void addnewfeature()
 		{
 			this.publish.click();
@@ -96,35 +96,35 @@ public class rec79multiplefeaturePOM {
          
 		}
 		
-		//click publish
+		//click refresh
 		public void refresh()
 		{
 			driver.navigate().refresh();
          
          
 		}
-		//Checking the expected result
+		
 		//Enter Search Item
-		public void enterSearchItem(String regionName) {
-			wt.presenceElementLocated1(this.searchRegion, 5).sendKeys(regionName);
+		public void enterSearchItem(String feaName) {
+			wt.presenceElementLocated1(this.searchfeature, 5).sendKeys(feaName);
 			//this.searchRegion.sendKeys(regionName);
 		}
 
-		//Click on the Search Region Button
+		//Click on the Search feature Button
 		public void clickOnSearchRegionBtn() {
 			wt.elementToBeClickable1(this.searchBtn, 5).click();
 		} 
 		
-			public boolean searchForAddedRegion(String regionName) {
-				List<WebElement> regions = wt.presenceElementLocated1(this.regionsTable, 5).findElements(By.xpath("//tbody[@id='the-list']//tr"));
-				int count = regions.size();
+			public boolean searchForAddedfeature(String feaName) {
+				List<WebElement> reg = wt.presenceElementLocated1(this.featureTable, 5).findElements(By.xpath("//tbody[@id='the-list']//tr"));
+				int count = reg.size();
 				boolean flag = false;
 				for(int i=0; i<count; i++) {
-					WebElement myRegion = regions.get(i).findElement(By.xpath("//tbody[@id='the-list']//tr[" + (i+1) + "]//td[1]"));
-					String myRegionText = wt.presenceElementLocated1(myRegion, 5).getText().trim();
-					System.out.println(myRegionText);
-					if(regionName.equals(myRegionText)) {
-						System.out.println("This is the region I was looking for..." + myRegionText);
+					WebElement myfeature = reg.get(i).findElement(By.xpath("//tbody[@id='the-list']//tr[" + (i+1) + "]//td[1]"));
+					String myfeaText = wt.presenceElementLocated1(myfeature, 5).getText().trim();
+					System.out.println(myfeaText);
+					if(feaName.equals(myfeaText)) {
+						System.out.println("This is my feature..." + myfeaText);
 						flag = true;
 						break;
 					}

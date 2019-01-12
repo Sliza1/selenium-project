@@ -1,4 +1,4 @@
-//To verify whether application allows  admin to add the post into trash
+//To Verify whether application allows admin to add new user & details get displayed in database
 package com.training.pom;
 
 import org.openqa.selenium.By;
@@ -62,19 +62,19 @@ public class rec77multipleusers2 {
 		
 		
 		
-		//mouse over to particular post
+		//mouse over to property link
 		public void mouseoverparticularpost()
 		{
          Actions action=new Actions(driver);
          action.moveToElement(this.users).build().perform();
 		}
-		//Click on Trash link
+		//Click on add new link
 		public void addnewuser()
 		{
          
          addnew.click();
 		}
-		
+		//enter text in username, mail, firstname ,lastname and website fields
 		public void usernameval(String uname,String mail,String fname,String lname,String urli)
 		{
          
@@ -85,7 +85,7 @@ public class rec77multipleusers2 {
          url.sendKeys(urli);
          
 		}
-		
+		//enter password
 		public void usernameval1(String spassword ) throws InterruptedException
 		{
          
@@ -99,7 +99,7 @@ public class rec77multipleusers2 {
          
          
 		}
-		
+		//select role and click add new user
 		public void usernameval2(String role )
 		{
 			Select dropdown=new Select(role1);
@@ -108,6 +108,8 @@ public class rec77multipleusers2 {
 	         
 	         
 			}
+		
+		//check expected
 		public String confirm( )
 		{
 			String s=conmsg.getText();
